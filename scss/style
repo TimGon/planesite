@@ -234,7 +234,7 @@
     }
     
     &__breadcrumb-item:not(:last-of-type) a{
-        background: url('/img/arrow-right-red.png');
+        background: url('../img/arrow-right-red.png');
         background-position: right;
         padding-right: 9px;
         background-repeat: no-repeat;
@@ -288,15 +288,15 @@
         }
 
         &__plane-white {
-            background: url('/img/plane.jpg') no-repeat;
+            background: url('../img/plane.jpg') no-repeat;
         }
 
         &__plane-in-air {
-            background: url('/img/plane.jpg') no-repeat;
+            background: url('../img/plane.jpg') no-repeat;
         }
         
         &__plane-yellow {
-            background: url('/img/plane.jpg') no-repeat;
+            background: url('../img/plane.jpg') no-repeat;
         }
     }
     
@@ -353,7 +353,7 @@
 
         &__choose {
             margin-bottom: 19px;
-            background: $white url('/img/location.svg') no-repeat;
+            background: $white url('../img/location.svg') no-repeat;
             background-position: 4% 49%;
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -368,7 +368,7 @@
             position: relative;
             padding: 5px 9px;
             color: #999999;
-            background:$white url('/img/calendar.png') no-repeat;
+            background:$white url('../img/calendar.png') no-repeat;
             background-position: 96% 49%;
         }
 
@@ -420,7 +420,7 @@
             } 
 
             & input[type=checkbox]:checked + .form__check::before {
-                background-image: url('/img/check.png');
+                background-image: url('../img/check.png');
                 background-position: center;
             }
         }
@@ -472,7 +472,7 @@
 
         &__pass {
             appearance: none;
-            background: $white url('/img/arrow-down-red.png') no-repeat;
+            background: $white url('../img/arrow-down-red.png') no-repeat;
             background-position: 90% 53%;
             padding: 0 12px 0 8px;
             width: 126px;
@@ -489,7 +489,7 @@
     &__banner {
         width: 651px;
         height: 172px;
-        background: url('/img/polet.jpg') no-repeat center center;
+        background: url('../img/polet.jpg') no-repeat center center;
         text-align: end;
         padding: 131px 37px 48px 0;
         margin-top: 23px;
@@ -703,11 +703,11 @@
             left: 0;
             width: 17px;
             height: 20px;
-            background: url('/img/small-train.png') left center no-repeat;
+            background: url('../img/small-train.png') left center no-repeat;
         }
         
         &:active.active::after {
-            background: url('/img/small-train-active.png') left center no-repeat;
+            background: url('../img/small-train-active.png') left center no-repeat;
         }
     }
     
@@ -720,11 +720,11 @@
             left: 0;
             width: 19px;
             height: 20px;
-            background: url('/img/hotel.png') left center no-repeat;
+            background: url('../img/hotel.png') left center no-repeat;
         }
 
         &:active.active::after {
-            background: url('/img/hotel-active.png') left center no-repeat;
+            background: url('../img/hotel-active.png') left center no-repeat;
         }
     }
 
@@ -737,11 +737,11 @@
             left: 0;
             width: 17px;
             height: 20px;
-            background: url('/img/taxi.png') left center no-repeat;
+            background: url('../img/taxi.png') left center no-repeat;
         }
         
         &:active.active::after {
-            background: url('/img/taxi-active.png') left center no-repeat;
+            background: url('../img/taxi-active.png') left center no-repeat;
         }
     }
 
@@ -754,11 +754,11 @@
             left: 0;
             width: 21px;
             height: 19px;
-            background: url('/img/bus.png') left center no-repeat;
+            background: url('../img/bus.png') left center no-repeat;
             color: $darkBlue;
         }
         &:active.active::after {
-            background: url('/img/bus-active.png') left center no-repeat;
+            background: url('../img/bus-active.png') left center no-repeat;
         }
     }
 
@@ -771,11 +771,11 @@
             left: 0;
             width: 17px;
             height: 20px;
-            background:  url('/img/umbrella.svg') left center no-repeat;
+            background:  url('../img/umbrella.svg') left center no-repeat;
         }
 
         &:active.active::after {
-            background:  url('/img/umbrella-active.svg') left center no-repeat;
+            background:  url('../img/umbrella-active.svg') left center no-repeat;
         }
     }
 
