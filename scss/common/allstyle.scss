@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    
+    body {
+        background: url('../img/sky.png');
+        background-repeat: no-repeat;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
+    button,input[type="button"],input[type="checkbox"], 
+    input[type="radio"] {
+        cursor: pointer;
+    }
+
+    
+
+    input[type='radio'] {
+        position: relative;
+        height: 13px;
+        width: 13px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid $gray;
+        }
+
+    }
+    .fixed-container {
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .fixed-container, .flex {
+        display: flex;
+    }
+
+    .container {
+        max-width: 995px;
+        margin: 0 auto;
+    }
+
+    .flex {
+        justify-content: space-between;
+        align-items:center
+    }
+    
+    .jaw, .main__central, .right-block,
+    .main__btn, .form, .main__ticket-btn,
+    .main__table-cruise, .btn {
+        background: $white;
+        border-radius: 10px;
+    }
+    
+    .nav-style, .header__link {
+        font-family: $Sans;
+    }
+
+    .nav-style {
+        color: $white;
+        border-bottom: 1px solid;
+    }
+
+    .title {
+        color: #333333;
+    }
+
+    .link {
+        color: $linkBlue;
+        border-bottom: 1px solid $linkBlue;
+        font-size: $smallSize;
+    }
+
+    .paragraph {
+        font-size: $mediumSize;
+        color: #666666;
+    }
+    
+    input, select, input[type="checkbox"],
+    .main__table-cruise, textarea {
+        border: 1px solid #c1bfb7;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    input::placeholder, textarea::placeholder {
+        color: #999999;
+    }
+
+    input::placeholder:focus {
+        color: $linkBlue;
+    }
+
+    input:focus:hover, select:focus:hover, 
+    textarea:focus:hover {
+        outline: 1px solid $linkBlue;
+    }
+
+    select {
+        color: #999999;
+        font-size: $largeSize;
+    }
+
+    .form-btn {
+        background: linear-gradient(45deg,#1790d9, #4cb9ed);
+        border: 3px solid #c3dae3;
+        padding: 16px 24px;
+        color: $white;
+        font-size: $mediumSize;
+        
+        &:hover {
+            background: #3eb1e8;
+        }
+
+        &.active {
+            background: linear-gradient( #1790d9, #4cb9ed);
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+}

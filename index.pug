@@ -1,0 +1,328 @@
+doctype html
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Plane
+    
+    link(rel="stylesheet", href="css/style.css")
+    
+    link(rel="stylesheet" type="text/css" href="slick/slick.css")
+    link(rel="stylesheet" type="text/css" href="slick/slick-theme.css")
+    link(rel="stylesheet" type="text/css" href="css/datepicker.css")
+body 
+
+    // ---------------------------------------- Header block ----------------------------------------
+
+    header.header
+        .header__container.flex
+            
+            a.header__link(href="#")
+
+                img.header__logo(src="img/House-512.png", alt="house")
+
+            a.header__map(href="#") 
+                span Карта сайта
+            -var img = {plane:'Авиабилеты', train:'ЖД Билеты', search:'Поиск тура'}
+            -var title = ['Услуги', 'Компания', 'Сервисы']
+            .header__subnav
+                    .header__subnav-text Карта сайта
+                    .header__subnav-container
+                        .flex.header__subnav-content
+                            each key, name in img
+                                .flex(class="header__subnav-"+name) 
+                                    img(src="/img/"+name+".png", alt=""+name)
+                                    span= key
+                        .header__subnav-title.flex
+                            each name in title  
+                                if name === 'Услуги'
+                                    .header__subnav-nav
+                                        span= name
+                                        ul.header__subnav-menu
+                                            -var menu = ['Аэроэкспресс', 'Гостиницы', 'Такси', 'Автобусы', 'Страхование', 'Корпоративное обслуживание']
+                                            each menuitem in menu
+                                                li 
+                                                    a(href="#")= menuitem
+                                if name === 'Компания'
+                                    .header__subnav-nav
+                                        span= name
+                                        ul.header__subnav-menu 
+                                            -var info = ['О компании', 'Офисы продаж', 'Контактная информация']
+                                            each infoitem in info
+                                                li 
+                                                    a(href="#")= infoitem
+                                if name === 'Сервисы'
+                                    .header__subnav-nav
+                                        span= name
+                                        ul.header__subnav-menu 
+                                            -var news = ['Новости', 'Вопросы-ответы', 'Справочники']
+                                            each newsitem in news 
+                                                li 
+                                                    a(href="#")= newsitem  
+                    .header__subnav-wrap.flex 
+                        .header__subnav-question Если у вас возникли вопросы, звоните нам по телефонам: 
+                            a.header__subnav-phone(href="tel:+7 (3022) 45-05-05") +7 (3022) 45-05-05
+                        a.header__subnav-answer(href="#") Вопросы-ответы 
+                            
+
+            .header__travel
+                -var travel = ['Авиабилеты',  'Ж/Д билеты',   'Поиск тура']
+                for item in travel
+
+                    a.header__item.nav-style(href="#")=item
+
+            nav.header__menu
+                ul.header__list
+                    -var lst = ['О компании', 'Услуги', 'Пресс-центр', 'Офисы продаж', 'Контакты']
+                    each items in lst
+                        li
+                            a.nav-style(href= "#")= items
+    
+        // ---------------------------------------- Jaw block ----------------------------------------
+    
+    .jaw.container.flex
+        .jaw__content-text 
+            img(src="img/text-logo.png", alt="text-logo")
+            h1.jaw__text Ваша дорога - наша забота!
+        
+        .jaw__wrap 
+            img(src="img/logo.png", alt="logo")
+        
+        p.jaw__paragraph Авиаэкспресс - крупнейшая в Забайкалье сеть универсальных касс по продаже авиационных, железнодорожных билетов и туристических услуг.
+        
+        .jaw__contacts 
+            .jaw__contact-text Телефон справочной службы:
+            a.jaw__phone-number(href="tel:+7 (3022) 45-05-05") +7 (3022) 45-05-05
+    
+    // ---------------------------------------- Main block ----------------------------------------
+    
+    main.main
+        .fixed-container
+            section.main__central
+                .main__container
+                    nav.main__nav
+                    -var nav = ['Главная', 'Услуги', 'Заказ и бронирование авиабилетов']
+                        ol.main__breadcrumb
+                            each item in nav
+                                li.main__breadcrumb-item 
+                                    a(href="#")= item
+                    
+                    .main__titles.flex 
+                        h1.main__title.title Бронирование авиабилетов
+                        a.main__link.link(href="") Посмотреть инструкцию по бронированию
+                    
+                    p.main__paragraph.paragraph Вводный текст, где мы должны написать что дает возможность заказывать билеты именно через нас. Вводный текст, где мы должны написать что дает возможность заказывать билеты именно через нас. Вводный текст, где мы должны написать что дает возможность заказывать билеты именно через нас. 
+                    
+                    -var name = ['plane-white', 'plane-in-air', 'plane-yellow']
+                    .slider
+                        each item in name
+                            if item =='plane-white'
+                                .slide(class="slider__"+item)
+                                    button.slide__text Спецпредложение!
+                            else
+                                .slide(class="slider__"+item)
+                    
+                    -var chooseName = {choose:'Выбор рейса', infopass:'Информация о пассажирах', reg:'Оформление', result:'Результаты бронирования'}
+                    -var i = 0;
+                    .main__steps.flex  
+                        each item, key in chooseName
+                            div(class="main__"+ key)
+                                if item == "Выбор рейса"
+                                    button.main__btn.is-active= item
+                                else
+                                    button.main__btn= item 
+                            if i < 3 
+                                img.main__arrow-right(src="img/arrow-right-pink.png", alt="arrow-right-pink")
+                                -i++
+    
+                    form.form(action="#") 
+                        .form__wraps.is-active
+                            .form__content.is-active.flex
+                            
+                                label(for="chita") 
+                                    span.form__text Город вылета
+                            
+                                    select#chita.form__choose(name="choose__city")
+                                        option(value="Чита" disabled selected style='display:none;') Чита 
+                                        -var city = ['Чита(Россия)','Читато(Ангола)']
+                                        each choosecity in city
+                                            option(value=choosecity)= choosecity
+
+                                    input.form__date(type="text" name="choose__date" placeholder="15 сентября 2013")
+                            
+                                label(for="moscow") 
+                                    span.form__text Город назначения
+                            
+                                    select#moscow.form__choose(name="choose__moscow")
+                                        option(value="Москва" disabled selected style='display:none;') Москва 
+                                        -var city = ['Москва/Внуково','Москва/Домодедово']
+                                        each aircity in city
+                                            option(value=aircity)= aircity      
+                                    
+                                    input.form__date(type="text" name="choose__date" placeholder="15 сентября 2013")
+                            
+                            
+                            .flex.form__cb
+                                label.form__wrap(for="btn")
+                                    input#btn(type="checkbox" name="choose__check")
+                                    span.form__check 
+                                    label 
+                                        span.form__checkbox В одну сторону
+                        .form__content.flex
+                            .form__contain.flex 
+                                span.form__text Количество пассажиров
+                                .flex       
+                                    label.pass(for="adults") 
+                                        select#adults.form__pass(name="adults") 
+                                            option(value="Взрослые" disabled selected style='display:none;') Взрослые 
+                                            -var numbers = [1,2,3,4,5,6]
+                                            each num in numbers
+                                                option(value=num)= num
+                                    label.pass(for="child") 
+                                        select#child.form__pass(name="child") 
+                                            option(value="Дети" disabled selected style='display:none;') Дети 
+                                            -var numbers = [1,2,3,4,5,6]
+                                            each num in numbers
+                                                option(value=num)= num
+                                    label.pass(for="baby")             
+                                        select#baby.form__pass(name="baby") 
+                                            option(value="Младенцы" disabled selected style='display:none;') Младенцы 
+                                            -var numbers = [1,2,3,4,5,6]
+                                            each num in numbers
+                                                option(value=num)= num               
+                            .form__contain.flex.indent
+                                span.form__text Класс 
+                                label(for="class")  
+                                    select#class.form__pass(name="class")
+                                        -var classes = ['Эконом','Бизнес','Первый']
+                                        each values in classes 
+                                            option(value=values)= values
+                        -var btn = {card:'Пластиковая карта', money:'Наличные', clsp:'Безналичный рассчет'}
+                        .flex.form__content   
+                            span.form__text-title Оплата с:
+                            .flex.form__btns
+                                each index, key in btn
+                                    label.content(for=""+key)   
+                                        input.radiobtn(id=""+key type="radio", name="radiobtn") 
+                                        span.form__text-btn= index
+                        .flex.form__content
+
+                        input.form__btn.form-btn(type="button", value="Расписание")
+                    
+                    .main__banner
+                        span.main__ticket Билеты от
+                        span.main__ticket-btn 6450 &#8381;
+                    
+                    h2.main__cruise.title Чита - Москва (20.08.2013)
+                    -var table = ['Рейс', 'Вылет', 'Прилет', 'В пути', 'Самолет', 'Класс']
+                    -var cruize = ['S7-120 *', '08:50 Чита', '11:50 Домодедово', '9:00','БОИНГ 737-800', 'Э/4']
+                    table.main__table-cruise(frame="border")
+                        tr.main__cruise-title 
+                            td(colspan="7" bgcolor="#f8f5eb") Прямые рейсы
+                        tr.main__info(bgcolor="#eaf1ff")   
+                            each text in table
+                                if text == 'Рейс'
+                                    th(colspan="2")= text
+                                else
+                                    th= text
+                        tr.main__cruise-info
+                            td 
+                                input.activebtn(type="radio", name="btn")
+                            each infocruize in cruize
+                                if infocruize == '08:50 Чита' || '11:50 Домодедово'
+                                    td.smaller-size= infocruize
+                                else
+                                    td.small-size= infocruize
+                        tr.main__cruise-info
+                            td 
+                                input.activebtn(type="radio", name="btn")
+                            each infocruize in cruize
+                                if infocruize == '08:50 Чита' || '11:50 Домодедово'
+                                    td.smaller-size= infocruize
+                                else
+                                    td.small-size= infocruize
+                    span.main__help-info * - рейсы с посадкой
+
+            // ---------------------------------------- Right block ----------------------------------------
+
+            aside.right-block
+                .right-block__container 
+                    .right-block__btn-wrap.indent-block
+                        
+                        button.btn.active Заказ билетов 
+                        
+                        button.btn Расписание рейсов
+                    
+                    .right-block__buy.indent-block 
+                        
+                        h1.right-block__title.title Узнать где купить
+                        
+                        p.right-block__paragraph.paragraph У нас 16 офисов продаж, где вы можете купить билеты и получить консультации наших специалистов.
+                        
+                        .flex.right-block__indent
+                            a.right-block__link.link(href="#") Пункты продаж билетов
+                            
+                            img.right-block__city(src="img/city.png", alt="city")
+                    
+                    .right-block__statement.indent-block
+                        
+                        h1.right-block__text.title Оставьте нам заявку
+                        
+                        p.right-block__paragraph.paragraph Оставьте нам сообщение с вашими потребностями и наши консультанты сами подберут вам лучшие условия и свяжутся с вами в течение 3-6  часов.
+                        
+                        form.feedback
+                            label(for="text") 
+                                input.contact#text(type="text" placeholder="Как вас зовут?")
+                            label(for="phone") 
+                                input.contact#phone(type="tel" placeholder="Контактный телефон")
+                            label(for="textarea") 
+                                textarea#textarea(name="text", placeholder="Что Вас интересует?")
+                            
+                            input.feedback__btn.form-btn(type="button", value="Отправить")
+                    
+                    .right-block__services.indent-block
+                        h1.right-block__text.title Услуги
+                        .contain.flex
+                            -var service = {air:'Аэроэкспресс', hotel:'Гостиницы', taxi:'Такси', bus:'Автобусы', insurance:'Страхование'}
+                            each key, items in service
+                                hr
+                                a.title-text(class="right-block__"+items href="#")= key
+                    .right-block__info.indent-block
+                        h1.right-block__text.title Полезно знать
+                        .contain.flex
+                            -var info = ['Авиакомпании', 'Аэропорты']
+                            each items in info
+                                hr
+                                a.text-link(href="#")= items
+    
+    // ------------------------------------- Footer -------------------------------------
+    
+    footer.footer
+        .footer__container
+            .footer__indent.flex
+                .footer__copyright Аэроэкспресс 1998-2013
+                .footer__phone Телефон справочной службы: 
+                    a(href="tel:+7 (3022) 45-05-05") (3022) 45-05-05
+            -menu = ['О проекте', 'Авиабилеты', 'ЖД билеты', 'Поиск тура'] 
+            .footer__indent.flex 
+                nav.footer__menu
+                    ul.footer__lst
+                        each item in menu
+                            li.footer__item
+                                a.nav-style(href="#")= item 
+                .footer__links.flex 
+                    -var links = {adress:'Адреса точек продаж', line:'Написать нам'}
+                        each link, key in links 
+                            if key.length-3==1  
+                                .line 
+                            a.nav-style(class="footer__"+key href="#")= link
+
+
+                
+    script(src="https://code.jquery.com/jquery-3.6.0.js")
+    script(type="text/javascript" src="slick/slick.min.js")
+    script(type="text/javascript" src="js/script.js") 
+    script(type="text/javascript" src="https://code.jquery.com/ui/1.13.1/jquery-ui.js")
+    script(type="text/javascript" src="js/datepicker.min.js")    
+
